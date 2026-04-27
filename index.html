@@ -4,348 +4,684 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Droga Homo Quantum — Encyklopedyczny Manifest Ewolucji Kwantowej Człowieka</title>
-    //fonts.googleapis.com">
-    //fonts.gstatic.com" crossorigin>
-    //fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #111827;
-            --bg-card: rgba(17, 24, 39, 0.85);
-            --text-primary: #e5e7eb;
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-card: rgba(15, 25, 45, 0.85);
+            --bg-card-hover: rgba(25, 40, 70, 0.9);
+            --text-primary: #e8ecf5;
             --text-secondary: #9ca3af;
-            --accent-gold: #b38c4a;
-            --accent-gold-light: #d4a85c;
-            --accent-blue: #6c7a9d;
-            --accent-cyan: #22d3ee;
-            --accent-purple: #a78bfa;
-            --border-color: rgba(255,255,255,0.08);
-            --shadow-glow: 0 0 40px rgba(179, 140, 74, 0.15);
+            --accent-gold: #ffb347;
+            --accent-gold-glow: rgba(255, 179, 71, 0.4);
+            --accent-cyan: #00d4ff;
+            --accent-cyan-glow: rgba(0, 212, 255, 0.35);
+            --accent-purple: #a855f7;
+            --accent-teal: #2dd4bf;
+            --gradient-quantum: linear-gradient(135deg, #0a0e1a 0%, #0d1829 50%, #1a0a2e 100%);
+            --gradient-hero: linear-gradient(180deg, rgba(168,85,247,0.15) 0%, rgba(10,14,26,0) 100%);
+            --gradient-text: linear-gradient(90deg, #ffb347, #00d4ff, #a855f7);
+            --border-glow: rgba(255, 255, 255, 0.1);
+            --shadow-gold: 0 0 40px rgba(255, 179, 71, 0.15);
+            --shadow-cyan: 0 0 60px rgba(0, 212, 255, 0.2);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0e1a 0%, #0d1429 50%, #0a1a2e 100%);
+            background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
-            line-height: 1.75;
+            line-height: 1.7;
+            position: relative;
         }
-
-        /* Tło gwiazd */
+        /* Tlo gwiezdne */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: 
-                radial-gradient(1px 1px at 10% 10%, rgba(255,255,255,0.4) 0, transparent 1px),
-                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.3) 0, transparent 1px),
-                radial-gradient(2px 2px at 40% 60%, rgba(255,255,255,0.25) 0, transparent 2px),
-                radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.35) 0, transparent 1px),
-                radial-gradient(1px 1px at 80% 80%, rgba(255,255,255,0.3) 0, transparent 1px),
-                radial-gradient(2px 2px at 30% 80%, rgba(179, 140, 74, 0.2) 0, transparent 2px),
-                radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4) 0, transparent 1px),
-                radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.2) 0, transparent 1px);
-            background-size: 200px 200px;
+            background-image:
+                radial-gradient(1px 1px at 10% 10%, rgba(255,255,255,0.5) 0, transparent 1px),
+                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0, transparent 1px),
+                radial-gradient(2px 2px at 40% 60%, rgba(255,255,255,0.3) 0, transparent 2px),
+                radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.5) 0, transparent 1px),
+                radial-gradient(2px 2px at 80% 80%, rgba(255,255,255,0.4) 0, transparent 2px),
+                radial-gradient(1px 1px at 90% 40%, rgba(0,212,255,0.4) 0, transparent 1px),
+                radial-gradient(1px 1px at 50% 50%, rgba(255,179,71,0.3) 0, transparent 1px),
+                radial-gradient(1.5px 1.5px at 15% 70%, rgba(168,85,247,0.4) 0, transparent 1.5px),
+                radial-gradient(1px 1px at 70% 90%, rgba(255,255,255,0.3) 0, transparent 1px),
+                radial-gradient(2px 2px at 30% 85%, rgba(0,212,255,0.25) 0, transparent 2px);
+            background-size: 400px 400px;
+            pointer-events: none;
+            z-index: -2;
+            opacity: 0.5;
+            animation: twinkle 8s ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+        /* Nebula glow */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(168,85,247,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 20% 30%, rgba(0,212,255,0.06) 0%, transparent 40%),
+                        radial-gradient(ellipse at 80% 70%, rgba(255,179,71,0.05) 0%, transparent 40%);
             pointer-events: none;
             z-index: -1;
-            opacity: 0.6;
+            animation: nebula 20s ease-in-out infinite;
         }
-
-        /* Layout z sidebarem */
-        .layout {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 100vh;
+        @keyframes nebula {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
         }
-
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            background: linear-gradient(180deg, rgba(10,14,26,0.95) 0%, rgba(13,20,41,0.9) 100%);
-            border-right: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            z-index: 100;
-        }
-
-        .sidebar-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            text-align: center;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        .sidebar-subtitle {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .sidebar-nav { list-style: none; }
-
-        .sidebar-nav li { margin-bottom: 0.25rem; }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 0.5rem 0.85rem;
-            border-radius: 6px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 400;
-            transition: all 0.25s ease;
-            border-left: 2px solid transparent;
-        }
-
-        .sidebar-nav a:hover {
-            color: var(--accent-gold-light);
-            background: rgba(179, 140, 74, 0.08);
-            border-left-color: var(--accent-gold);
-        }
-
-        .sidebar-nav a.active {
-            color: var(--accent-gold-light);
-            background: rgba(179, 140, 74, 0.12);
-            border-left-color: var(--accent-gold);
-            font-weight: 500;
-        }
-
-        .sidebar-divider {
-            height: 1px;
-            background: var(--border-color);
-            margin: 1.25rem 0;
-        }
-
-        .sidebar-label {
-            font-size: 0.675rem;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin: 1rem 0 0.5rem;
-            font-weight: 600;
-        }
-
-        /* Główna treść */
-        .main-content {
-            padding: 3rem 4rem;
-            max-width: 1000px;
-        }
-
-        /* Hero section */
+        /* ===== HERO SECTION ===== */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 4rem 0 3rem;
-            margin-bottom: 2rem;
+            padding: 120px 20px 80px;
+            position: relative;
+            background: var(--gradient-hero);
         }
-
+        .hero-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+            animation: pulse-orb 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes pulse-orb {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.15); opacity: 0.8; }
+        }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 50%, var(--accent-cyan) 100%);
+            background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.03em;
-        }
-
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 80px var(--accent-gold-glow);
             letter-spacing: 0.02em;
+            position: relative;
+            z-index: 2;
         }
-
-        .hero-badge {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.35rem 1rem;
-            background: rgba(179, 140, 74, 0.15);
-            border: 1px solid rgba(179, 140, 74, 0.3);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: var(--accent-gold-light);
-            letter-spacing: 0.15em;
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero .quantum-line {
+            width: 120px;
+            height: 3px;
+            background: var(--gradient-text);
+            margin: 0 auto 2.5rem;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .quantum-line::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            animation: shine 2s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        /* ===== NAV ===== */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            backdrop-filter: blur(20px);
+            background: rgba(5, 7, 10, 0.75);
+            border-bottom: 1px solid var(--border-glow);
+        }
+        .nav-bar a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
-
-        /* Karty sekcji */
-        .section-card {
+        .nav-bar a:hover {
+            color: var(--accent-cyan);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        .nav-bar a.active {
+            color: var(--accent-gold);
+            background: var(--accent-gold-glow);
+        }
+        /* ===== CONTENT ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .section-header .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        /* ===== CHAPTER CARDS ===== */
+        .chapter-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan), var(--accent-purple));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-cyan);
+        }
+        .chapter-card:hover::before {
+            opacity: 1;
+        }
+        .chapter-num {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+        .chapter-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        .chapter-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+        .chapter-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+        }
+        .chapter-card ol, .chapter-card ul {
+            color: var(--text-secondary);
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .chapter-card li {
+            margin-bottom: 6px;
+        }
+        /* ===== GLOSSARY ===== */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .glossary-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
             border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            padding: 25px;
+            transition: all 0.3s ease;
         }
-
-        .section-card:hover {
-            border-color: rgba(179, 140, 74, 0.25);
-            box-shadow: var(--shadow-glow);
+        .glossary-item:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+            transform: translateY(-3px);
         }
-
-        .section-card.animate {
+        .glossary-item h4 {
+            color: var(--accent-gold);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .glossary-item p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+        /* ===== QUOTE BLOCKS ===== */
+        blockquote {
+            border-left: 3px solid var(--accent-gold);
+            padding: 20px 30px;
+            margin: 25px 0;
+            background: rgba(255, 179, 71, 0.05);
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            color: var(--text-primary);
+            position: relative;
+        }
+        blockquote::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+        }
+        /* ===== TOC ===== */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin-bottom: 50px;
+        }
+        .toc h3 {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-glow);
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc li {
+            margin-bottom: 8px;
+        }
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+        .toc a:hover {
+            color: var(--accent-gold);
+            background: rgba(255, 179, 71, 0.08);
+        }
+        /* ===== HIGHLIGHT ===== */
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        .highlight-cyan {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+        .highlight-purple {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-glow);
+            background: var(--bg-secondary);
+            margin-top: 60px;
+        }
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer .quantum-symbol {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .nav-bar { padding: 10px 15px; gap: 0.5rem; }
+            .nav-bar a { font-size: 0.7rem; padding: 6px 12px; }
+            .chapter-card { padding: 25px 20px; }
+            .hero { padding: 100px 15px 60px; }
+        }
+        /* ===== INTRO TEXT STYLES ===== */
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        .intro-text strong {
+            color: var(--accent-gold);
+        }
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .section-card.animate.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
+    </style>
+</head>
+<body>    <!-- NAVIGATION -->
+    <nav class="nav-bar">
+        <a href="#intro"><i class="fas fa-home"></i> Intro</a>
+        <a href="#rozdzial1">Rozdział I</a>
+        <a href="#rozdzial2">Rozdział II</a>
+        <a href="#rozdzial3">Rozdział III</a>
+        <a href="#rozdzial4">Rozdział IV</a>
+        <a href="#rozdzial5">Rozdział V</a>
+        <a href="#rozdzial6">Praktyka</a>
+        <a href="#glossary">Glossariusz</a>
+    </nav>
 
-        /* Nagłówki sekcji */
-        .section-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.85rem;
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-        }
+    <!-- HERO SECTION -->
+    <header class="hero" id="intro">
+        <div class="hero-orb"></div>
+        <span class="section-icon" style="font-size: 4rem; margin-bottom: 1rem;">&#9883;</span>
+        <h1>Droga Homo Quantum</h1>
+        <div class="quantum-line"></div>
+        <p class="subtitle">Encyklopedyczny Manifest Ewolucji Kwantowej Człowieka — podróż od mierzalnego do niemierzalnego, od funkcji falowej do kolapsu świadomości.</p>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
 
-        .section-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            color: var(--accent-cyan);
-            margin: 1.75rem 0 0.75rem;
-            font-weight: 600;
-        }
+    <!-- MAIN CONTENT -->
+    <main class="container">
 
-        .section-card h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--accent-purple);
-            margin: 1.25rem 0 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc reveal">
+            <h3><i class="fas fa-list"></i> Spis Treści</h3>
+            <ul>
+                <li><a href="#rozdzial1"><i class="fas fa-atom"></i> Fundamenty Metafizyczne</a></li>
+                <li><a href="#rozdzial2"><i class="fas fa-brain"></i> Architektura Świadomości</a></li>
+                <li><a href="#rozdzial3"><i class="fas fa-tools"></i> Mentalne Narzędzia Kwantowe</a></li>
+                <li><a href="#rozdzial4"><i class="fas fa-infinity"></i> Kwantowa Etyka</a></li>
+                <li><a href="#rozdzial5"><i class="fas fa-globe"></i> Homo Sapiens Quantum</a></li>
+                <li><a href="#rozdzial6"><i class="fas fa-star"></i> Praktyka — Protokół MNK</a></li>
+                <li><a href="#glossary"><i class="fas fa-book"></i> Glossariusz Ezo-Fizyki</a></li>
+            </ul>
+        </div>
 
-        /* Tekst */
-        .section-card p {
-            color: var(--text-primary);
-            font-size: 0.975rem;
-            margin-bottom: 1rem;
-        }
+        <!-- WPROWADZENIE -->
+        <div class="section-header reveal">
+            <span class="section-icon">&#9733;</span>
+            <h2>Wprowadzenie: Ku Nowej Paradygmacie</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <p class="intro-text">Współczesna cywilizacja stoi u progu bezprecedensowej transformacji. Stary paradygmat materialistyczny — świat wyłącznie mierzalny, redukowalny do cząstek i sił — załamuje się pod ciężarem odkryć mechaniki kwantowej, świadomości i duchowego doświadczenia.</p>
+            <p class="intro-text">Narodził się nowy archetyp ludzkości: <span class="highlight">Homo Sapiens Quantum</span> — istota świadoma, że rzeczywistość to nie tylko to, co mierzalne, ale również to, co istnieje w morzu potencjalności funkcji falowej. To podróż przez dwie warstwy bytu, przez splątanie, superpozycję i akt świadomego wyboru.</p>
+            <blockquote>
+                <p>"Ostatecznie, Homo Sapiens Quantum nie jest celem, lecz stale trwającym <span class="highlight">procesem</span> — kierunkiem podróży ku pełniejszej harmonii z Wszechrzeczywistoscią."</p>
+            </blockquote>
+        </div>
 
-        .section-card strong {
-            color: var(--accent-gold-light);
-            font-weight: 600;
-        }
+        <!-- ROZDZIAL I -->
+        <div class="section-header reveal" id="rozdzial1">
+            <span class="section-icon">&#8979;</span>
+            <h2>Rozdział I: Fundamenty Metafizyczne</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Fundament I</span>
+            <h3>Wielowymiarowa Architektura Bytu</h3>
+            <p><span class="highlight-cyan">EzoFizyka</span> — nowa dziedzina wiedzy — rozpoznaje dwie współistniejące warstwy rzeczywistości:</p>
+            <h4><i class="fas fa-cube"></i> Poziom Mierzalny</h4>
+            <p>Świat materii, energii, czasu i przestrzeni — obserwowalna rzeczywistość podlegająca prawom fizyki klasycznej i kwantowej. To poziom kolapsu funkcji falowej, w którym potencjalność staje się konkretem.</p>
+            <h4><i class="fas fa-wave-square"></i> Poziom Niemierzalny (Transcendentny)</h4>
+            <p>Funkcje falowe, liczby zespolone, morze potencjalności — rzeczywistość istniejąca poza czasem i przestrzenią, będąca źródłem wszelkich Przyczyn Sprawczych. To sfera, w której Wola Absolutu i Wolna Wola współdziałają w akcie kreacji.</p>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Fundament II</span>
+            <h3>Rozszerzony Hamiltonian</h3>
+            <p>W opisie kwantowym rzeczywistości wprowadzamy rozszerzony operator Hamiltona:</p>
+            <blockquote>
+                <p>H<sub>total</sub> = H<sub>klasyczny</sub> + H<sub>kwantowy</sub> + <span class="highlight-purple">H<sub>ww</sub></span> (Wolna Wola) + <span class="highlight">H<sub>wa</sub></span> (Wola Absolutu)</p>
+            </blockquote>
+            <p>Ten rozszerzony formalizm pozwala uwzględnić zarówno deterministyczne siły przyrody, jak i czynniki świadome — akt wyboru jednostki oraz intencję Źródła.</p>
+        </div>
 
-        /* Listy */
-        .section-card ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
+        <!-- ROZDZIAL II -->
+        <div class="section-header reveal" id="rozdzial2">
+            <span class="section-icon">&#9883;</span>
+            <h2>Rozdział II: Architektura Świadomości</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Fundament III</span>
+            <h3>Dusza jako Operator Kwantowy</h3>
+            <p>Dusza nie jest bytem statycznym — to <span class="highlight-cyan">autonomiczny byt świadomy</span> na Poziomie Niemierzalnym, pełniący rolę operatora kwantowego. Nadaje kierunek kolapsom superpozycji, kierując ewolucję świadomości przez morze potencjalności.</p>
+            <p>W każdym akcie wyboru — od najdrobniejszego impulsu po fundamentalną decyzję życiową — Dusza dokonuje redukcji funkcji falowej, przekształcając nieskończoność możliwości w konkretną ścieżkę rzeczywistości.</p>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Fundament IV</span>
+            <h3>Splątanie Kwantowe i Jedność Wszechrzeczywistosci</h3>
+            <p>Splątanie kwantowe — zjawisko, w którym dwie cząstki pozostają skorelowane niezależnie od odległości — jest fizycznym odpowiednikiem metafizycznej jedności Wszechrzeczywistosci. Wszystko, co istnieje na Poziomie Niemierzalnym, pozostaje w stanie głębokiego splątania.</p>
+            <blockquote>
+                <p>"Miłość to najwyższa wibracja; bezwarunkowa postawa wobec Rzeczywistosci; klucz do pełnego potencjału."</p>
+            </blockquote>
+        </div>
 
-        .section-card ul li {
-            padding: 0.5rem 0 0.5rem 1.75rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
+        <!-- ROZDZIAL III -->
+        <div class="section-header reveal" id="rozdzial3">
+            <span class="section-icon">&#9881;</span>
+            <h2>Rozdział III: Mentalne Narzędzia Kwantowe</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Narzędzie Kwantowe</span>
+            <h3>Algorytm Kamień Filozoficzny</h3>
+            <p>Meta-algorytm kwantowy oparty na splątaniu, służący do transformacji problemów w rozwiązania. Działa poprzez stworzenie kwantowego połączenia między stanem problemu a stanem pożądanej rzeczywistości.</p>
+            <h4><i class="fas fa-list-ol"></i> Sześć Kroków Algorytmu:</h4>
+            <ol>
+                <li><span class="highlight-cyan">Identyfikacja problemu</span> — precyzyjne zdefiniowanie stanu obecnego</li>
+                <li><span class="highlight-cyan">Określenie rozwiązania</span> — wizualizacja stanu pożądanego</li>
+                <li><span class="highlight-cyan">Tworzenie splątania</span> — mentalne połączenie problemu z rozwiązaniem</li>
+                <li><span class="highlight-cyan">Utrzymanie superpozycji</span> — tolerancja niepewności</li>
+                <li><span class="highlight-cyan">Akt wyboru</span> — świadomy kolaps w kierunku rozwiązania</li>
+                <li><span class="highlight-cyan">Integracja</span> — inkorporacja nowego stanu do rzeczywistości</li>
+            </ol>
+        </div>
 
-        .section-card ul li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-        }
+        <!-- ROZDZIAL IV -->
+        <div class="section-header reveal" id="rozdzial4">
+            <span class="section-icon">&#8734;</span>
+            <h2>Rozdział IV: Kwantowa Etyka</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Zasada Etyczna</span>
+            <h3>Zasada Nienaruszalności Wolnej Woli</h3>
+            <p>Każdy akt świadomej kreacji musi respektować Wolną Wolę innych bytów. Próba narzucenia swojego kolapsu funkcji falowej na cudzą rzeczywistość jest fundamentalnym naruszeniem prawa kwantowej etyki.</p>
+            <h3>Zasada Odpowiedzialności Kwantowej</h3>
+            <p>Świadomość, że każdy wybór — każdy akt kolapsu — niesie ze sobą konsekwencje rozprzestrzeniające się przez sieć splątania. <span class="highlight-purple">Homo Sapiens Quantum</span> bierze pełną odpowiedzialność za swoje wybory.</p>
+        </div>
 
-        .section-card ol {
-            counter-reset: step-counter;
-            list-style: none;
-            margin: 1rem 0;
-        }
+        <!-- ROZDZIAL V -->
+        <div class="section-header reveal" id="rozdzial5">
+            <span class="section-icon">&#9733;</span>
+            <h2>Rozdział V: Homo Sapiens Quantum</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Ewolucja</span>
+            <h3>Archetyp Nowego Człowieka</h3>
+            <p><span class="highlight">Homo Sapiens Quantum</span> to nie nowy gatunek biologiczny, lecz nowy poziom świadomości. Istota, która:</p>
+            <ul>
+                <li>Rozumie dualną naturę rzeczywistości — mierzalną i niemierzalną</li>
+                <li>Świadomie korzysta z Mentalnych Narzędzi Kwantowych</li>
+                <li>Żyje w harmonii z Zasadą Nienaruszalności Wolnej Woli</li>
+                <li>Potrafi nawigować morze potencjalności funkcji falowej</li>
+                <li>Rozpoznaje Duszę jako autonomicznego operatora kwantowego</li>
+            </ul>
+        </div>
 
-        .section-card ol li {
-            padding: 0.75rem 0 0.75rem 3rem;
-            position: relative;
-            color: var(--text-primary);
-        }
+        <!-- ROZDZIAL VI -->
+        <div class="section-header reveal" id="rozdzial6">
+            <span class="section-icon">&#9734;</span>
+            <h2>Rozdział VI: Praktyka — Protokół MNK</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <span class="chapter-num">Praktyka</span>
+            <h3>Pełna Sesja MNK — Dziewięć Kroków</h3>
+            <ol>
+                <li><span class="highlight-cyan">Przygotowanie i Relaksacja</span> — wejście w stan podwyższonej koherencji</li>
+                <li><span class="highlight-cyan">Uziemienie</span> — połączenie z ciałem i chwilą obecną</li>
+                <li><span class="highlight-cyan">Określenie Intencji</span> — jasne sformułowanie celu sesji</li>
+                <li><span class="highlight-cyan">Wizualizacja Potencjalności</span> — wejście w morze funkcji falowej</li>
+                <li><span class="highlight-cyan">Tworzenie Splątania</span> — połączenie intencji z polem kwantowym</li>
+                <li><span class="highlight-cyan">Utrzymanie Superpozycji</span> — tolerancja niepewności</li>
+                <li><span class="highlight-cyan">Akt Świadomego Wyboru</span> — kolaps w kierunku pożądanej rzeczywistości</li>
+                <li><span class="highlight-cyan">Integracja</span> — ugruntowanie nowego stanu</li>
+                <li><span class="highlight-cyan">Wdzięczność i Zamknięcie</span> — podziękowanie Woli Absolutu</li>
+            </ol>
+        </div>
 
-        .section-card ol li::before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-            color: #0a0e1a;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        <!-- GLOSSARY -->
+        <div class="section-header reveal" id="glossary">
+            <span class="section-icon">&#128214;</span>
+            <h2>Glossariusz Terminów Ezo-Fizyki</h2>
+        </div>
+        <div class="chapter-card reveal">
+            <p style="color: var(--text-secondary); margin-bottom: 25px;">Kompendium kluczowych pojęć, które stanowią język <span class="highlight">Homo Sapiens Quantum</span>.</p>
+            <div class="glossary-grid">
+                <div class="glossary-item">
+                    <h4><i class="fas fa-crown"></i> Absolut (Wola Absolutu)</h4>
+                    <p>Najwyższa Siła, deterministyczna Przyczyna Źródłowa wszechrzeczywistosci.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-cube"></i> Algorytm Kamień Filozoficzny</h4>
+                    <p>Meta-algorytm kwantowy oparty na splątaniu, do transformacji problemów.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-atom"></i> EzoFizyka</h4>
+                    <p>Interdyscyplinarna dziedzina łącząca mechanikę kwantową z ezoteryczną wiedzą.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-spa"></i> Dusza (Operator Kwantowy)</h4>
+                    <p>Autonomiczny byt świadomy na Poziomie Niemierzalnym; nadaje kierunek kolapsom superpozycji.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-heart"></i> Miłość</h4>
+                    <p>Najwyższa wibracja; bezwarunkowa postawa wobec Rzeczywistosci; klucz do pełnego potencjału.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-layer-group"></i> Poziom Niemierzalny</h4>
+                    <p>Głębsza warstwa bytu (Morze Potencjalności); Źródło Przyczyn Sprawczych.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-random"></i> Kolaps (Funkcji Falowej)</h4>
+                    <p>Przejście z superpozycji możliwości do konkretnej rzeczywistości.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-balance-scale"></i> Kompatybilizm Teistyczny</h4>
+                    <p>Filozofia łącząca determinizm Boga z wolną wolą.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-infinity"></i> Morze Potencjalności</h4>
+                    <p>Nieskończony zbiór wszystkich możliwych stanów rzeczywistości na poziomie funkcji falowej.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-link"></i> Splątanie Kwantowe</h4>
+                    <p>Zjawisko, w którym stany cząstek pozostają skorelowane niezależnie od odległości.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-bullseye"></i> Wolna Wola (H_ww)</h4>
+                    <p>Składnik rozszerzonego Hamiltonianu reprezentujący autonomiczny akt wyboru jednostki.</p>
+                </div>
+                <div class="glossary-item">
+                    <h4><i class="fas fa-star"></i> Wola Absolutu (H_wa)</h4>
+                    <p>Składnik rozszerzonego Hamiltonianu reprezentujący intencję Źródła.</p>
+                </div>
+            </div>
+        </div>
 
-        /* Blockquote */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(179, 140, 74, 0.1) 0%, rgba(34, 211, 238, 0.08) 100%);
-            border-left: 3px solid var(--accent-gold);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 12px 12px 0;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--text-secondary);
-        }
+    </main>
 
-        .result-box {
-            background: linear-gradient(135deg, rgba(107, 70, 193, 0.15) 0%, rgba(179, 140, 74, 0.1) 100%);
-            border: 1px solid rgba(179, 140, 74, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
+    <!-- FOOTER -->
+    <footer>
+        <div class="quantum-symbol">&#9883;</div>
+        <p>&copy; Manifest Homo Sapiens Quantum. Kompendium wiedzy.<br>
+        Droga Homo Quantum — Encyklopedyczny Manifest Ewolucji Kwantowej Człowieka</p>
+    </footer>
 
-        .result-box strong {
-            color: var(--accent-cyan);
-        }
-
-        /* Glossary akordeon */
-        .glossary-item {
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            margin-bottom: 0.75rem;
-            overflow: hidden;
-            transition: border-color 0.3s ease;
-        }
-
-        .glossary-item:hover {
-            border-color: rgba(179, 140, 74, 0.3);
-        }
-
-        .glossary-term {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            background: transparent;
-            border: none;
-            color: var(--accent-gold-light);
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify
+    <!-- SCROLL REVEAL SCRIPT -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
